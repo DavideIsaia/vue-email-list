@@ -14,18 +14,17 @@ const app = new Vue (
         },
 
         methods: {
-            
+            // genera 10 email random e le pusha dentro l'array predisposto
             generateMail() {
                 for (let i = 0; i< 10; i++) {
                     axios
-                        .get("https://flynn.boolean.careers/exercises/api/random/mail")
-                        .then((resp) => {
-                            this.randomMail = resp.data.response;
-                            this.eMailList.push(this.randomMail);
-                        });
+                    .get("https://flynn.boolean.careers/exercises/api/random/mail")
+                    .then((resp) => {
+                        this.randomMail = resp.data.response;
+                        this.eMailList.push(this.randomMail);
+                    });
                 }
-            }
-            
+            }            
         }
     }
 )

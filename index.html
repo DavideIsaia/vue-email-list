@@ -18,9 +18,14 @@
 <body>
     <div id="root">
         <button @click="generateMail">Genera</button>
-        <h2>Lista eMail</h2>
+        <h2>Lista e-mail</h2>
         <ul>
-            <li v-for="(element,index) in eMailList">{{index + 1}} {{ element }}</li>
+            <!-- ciclo v-for per generare i 10 elementi e v-if per aspettare a stamparli fin quando non sono arrivati a 10 -->
+            <li v-for="(element,index) in eMailList" 
+                v-if="eMailList.length >= 10"
+            >
+                {{ index + 1 }} - {{ element }}
+            </li>
         </ul>
 
     </div>
